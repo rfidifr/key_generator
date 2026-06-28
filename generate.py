@@ -437,3 +437,8 @@ if __name__ == "__main__":
         server.serve_forever()
     except KeyboardInterrupt:
         print("\n  Server stopped.")
+
+
+import os
+HOST, PORT = "0.0.0.0", int(os.environ.get("PORT", 10000))
+server = http.server.HTTPServer((HOST, PORT), Handler)        
